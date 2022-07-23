@@ -2,17 +2,20 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "watch:tailwind": "postcss public/tailwind.css -o public/index.css -w",
     "build:tailwind": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/index.css",
     "build": "npm run build:tailwind && rollup -c",
-    "start": "sirv public",
+    "start": "sirv public --single",
     "serve": "serve public -p 80",
-    "dev": "concurrently \"rollup -c -w\" \"npm run watch:tailwind\""
+    "dev": "concurrently \"rollup -c -w\" \"npm run watch:tailwind\"",
+    "server": "node ./server.js"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "@types/autoprefixer": "^10.2.0",
     "autoprefixer": "^9.8.8",
     "concurrently": "^7.2.2",
     "cross-env": "^7.0.3",
@@ -26,6 +29,12 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   },
   "dependencies": {
-    "sirv-cli": "^2.0.0"
+    "sirv-cli": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsdom": "^20.0.0",
+    "node-fetch": "^3.2.9",
+    "svelte-preprocess": "^4.10.7",
+    "svelte-routing": "^1.6.0"
   }
 }
