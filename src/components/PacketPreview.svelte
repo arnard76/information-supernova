@@ -7,6 +7,9 @@
   $: if (summary.length % 5 == 0) {
     colour = "green";
   }
+  $: if (summary.length % 3 == 0) {
+    colour = "blue";
+  }
 </script>
 
 <p
