@@ -4,13 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "watch:tailwind": "postcss public/tailwind.css -o public/index.css -w",
-    "build:tailwind": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/index.css",
+    "watch:tailwind": "postcss frontend/public/tailwind.css -o frontend/public/index.css -w",
+    "build:tailwind": "cross-env NODE_ENV=production postcss frontend/public/tailwind.css -o frontend/public/index.css",
     "build": "npm run build:tailwind && rollup -c",
-    "start": "sirv public --single",
-    "serve": "serve public -p 80",
-    "dev": "concurrently \"rollup -c -w\" \"npm run watch:tailwind\"",
-    "server": "node ./server.js"
+    "start": "sirv frontend/public --single",
+    "serve": "serve frontend/public -p 80",
+    "dev": "concurrently \"rollup -c -w\" \"npm run watch:tailwind\""
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -29,10 +28,6 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "jsdom": "^20.0.0",
-    "node-fetch": "^3.2.9",
     "sirv-cli": "^2.0.0",
     "svelte-preprocess": "^4.10.7",
     "svelte-routing": "^1.6.0"

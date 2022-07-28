@@ -3,11 +3,14 @@ import cors from "cors";
 import fetch from "node-fetch";
 import { sources } from "./summary_sources.js";
 import { JSDOM } from "jsdom";
+import { Server } from "socket.io";
 
 const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
 const port = process.env.PORT || 5000;
-app.use(cors());
 
+app.use(cors());
 app.get("/raw-sites", async (req, res) => {
   let rawSites = await Promise.all(
     sources.map(async (source) => {

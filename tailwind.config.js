@@ -5,6 +5,6 @@ export const future = {
 };
 export const plugins = [];
 export const purge = {
-  content: ["./src/App.svelte"],
+  content: ["./frontend/src/App.svelte"],
   // enabled: production, // disable purge in dev
 };
