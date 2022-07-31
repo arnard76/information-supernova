@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "server": "node ./server.js"
+    "start": "node ./server.js",
+    "dev": "nodemon ./server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -12,5 +13,8 @@
     "jsdom": "^20.0.0",
     "node-fetch": "^3.2.9",
     "socket.io": "^4.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
