@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "watch:tailwind": "postcss frontend/public/tailwind.css -o frontend/public/index.css -w",
-    "build:tailwind": "cross-env NODE_ENV=production postcss frontend/public/tailwind.css -o frontend/public/index.css",
+    "watch:tailwind": "postcss public/tailwind.css -o public/index.css -w",
+    "build:tailwind": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/index.css",
     "build": "npm run build:tailwind && rollup -c",
-    "start": "sirv frontend/public --single",
-    "serve": "serve frontend/public -p 80",
+    "start": "sirv public --single",
+    "serve": "serve public -p 80",
     "dev": "concurrently \"rollup -c -w\" \"npm run watch:tailwind\""
   },
   "devDependencies": {
