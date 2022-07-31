@@ -2,7 +2,7 @@ import { writable } from "svelte/store";
 
 export const rawSites = writable([]);
 
-fetch("http://localhost:5000/raw-sites")
+fetch("http://localhost:5000/api/raw-sites")
   .then((response) => {
     response
       .json()
@@ -13,7 +13,7 @@ fetch("http://localhost:5000/raw-sites")
 
 export const summaries = writable([]);
 
-fetch("http://localhost:5000/summaries")
+fetch("http://localhost:5000/api/summaries")
   .then((response) => {
     response
       .json()
